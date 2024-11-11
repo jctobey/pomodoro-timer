@@ -13,6 +13,7 @@ export const PomoTimerRadioButton = ({
   size = "default",
   isActive = false,
   isDisabled = false,
+  id,
 }: {
   name: string;
   value: string;
@@ -22,6 +23,7 @@ export const PomoTimerRadioButton = ({
   size?: "default" | "sm";
   isActive?: boolean;
   isDisabled?: boolean;
+  id: string;
 }) => (
   <label
     className={classNames("radio-button", variant, size, { active: isActive })}
@@ -35,6 +37,7 @@ export const PomoTimerRadioButton = ({
       disabled={isDisabled}
       aria-checked={isActive}
       className="sr-only"
+      id={id}
     />
     {children}
   </label>

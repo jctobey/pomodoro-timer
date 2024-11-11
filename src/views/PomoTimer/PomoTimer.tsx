@@ -118,9 +118,15 @@ export const PomoTimer = () => {
 
   return (
     <div className="pomotimer-layout">
-      <div className="pomotimer-durations">
+      <ul
+        className="pomotimer-durations"
+        role="radiogroup"
+        aria-activedescendant={activeButton}
+        tabIndex={-1}
+      >
         <PomoTimerRadioButton
           name="pomo-timer"
+          id={Button.POMODORO}
           value={Button.POMODORO}
           isActive={getIsActiveButton(Button.POMODORO)}
           onChange={() =>
@@ -131,6 +137,7 @@ export const PomoTimer = () => {
         </PomoTimerRadioButton>
         <PomoTimerRadioButton
           name="pomo-timer"
+          id={Button.SHORT_BREAK}
           value={Button.SHORT_BREAK}
           isActive={getIsActiveButton(Button.SHORT_BREAK)}
           onChange={() =>
@@ -141,6 +148,7 @@ export const PomoTimer = () => {
         </PomoTimerRadioButton>
         <PomoTimerRadioButton
           name="pomo-timer"
+          id={Button.LONG_BREAK}
           value={Button.LONG_BREAK}
           isActive={getIsActiveButton(Button.LONG_BREAK)}
           onChange={() =>
@@ -149,7 +157,7 @@ export const PomoTimer = () => {
         >
           Long Break
         </PomoTimerRadioButton>
-      </div>
+      </ul>
       <span className="pomotimer-remaining-time">
         {timeRemainingMinutesSeconds}
       </span>
