@@ -1,3 +1,13 @@
+[role="radiogroup"] {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+[role="radiogroup"]:focus {
+  outline: none;
+}
+
 .pomotimer-layout {
   padding: 10rem 0 10rem 0;
   background-color: black;
